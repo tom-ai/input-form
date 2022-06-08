@@ -1,0 +1,36 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    margin: auto;
+    width: 60%;
+    border: 3px solid;
+    padding: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 1em;
+}
+
+.form-row > label {
+    flex: 1;
+}
+
+.form-row > input {
+    flex: 2;
+    padding: 1em;
+    cursor: default;
+}
+
+.button {
+    padding: 1em;
+    wid
+}
