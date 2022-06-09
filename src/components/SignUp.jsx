@@ -7,6 +7,7 @@ function SignUp({ isCreating, toggleCreating }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordAgain, setPasswordAgain] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,9 +55,10 @@ function SignUp({ isCreating, toggleCreating }) {
         <div className="form-row">
           <label for="passwordAgain">Retype the password:</label>
           <input
-            id="password"
+            id="passwordAgain"
             type="password"
             name="password"
+            autoComplete="new-password"
             onChange={(event) => setPasswordAgain(event.target.value)}
           />
         </div>
@@ -65,7 +67,7 @@ function SignUp({ isCreating, toggleCreating }) {
           minLength={5}
           value={password}
           passwordAgain={passwordAgain}
-          onChange={(isValid) => {}}
+          style={{ marginTop: "1em", marginBottom: "1em" }}
         />
         <button className="form-row button" type="submit">
           Create account

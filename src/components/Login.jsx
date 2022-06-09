@@ -27,6 +27,7 @@ function Login({ isCreating, toggleCreating, handleLoginSubmit }) {
             id="password"
             type="password"
             name="password"
+            autoComplete="current-password"
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
