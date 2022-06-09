@@ -2,6 +2,10 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+    font-style: italic;
+}
+
 .container {
     margin: auto;
     width: 60%;

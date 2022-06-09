@@ -42,7 +42,7 @@ function Form() {
           toggleCreating={toggleCreating}
         />
         <button className="form-row button" type="submit">
-          Submit
+            {isCreating ? "Create account" : "Submit"}
         </button>
         {isCreating && (
           <a className="form-row" href="#" onClick={toggleCreating}>
