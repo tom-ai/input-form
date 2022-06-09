@@ -14,7 +14,7 @@ function SignUp({ isCreating, toggleCreating }) {
     console.log("Signing up with ", firstName, lastName, email, password);
   };
   return (
-    <div className="container form">
+    <div className="container">
       <form id="signUpForm" onSubmit={handleSubmit}>
         <div className="form-row">
           <label for="fname">First Name:</label>

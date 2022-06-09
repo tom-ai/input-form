@@ -10,7 +10,7 @@ function Login({ isCreating, toggleCreating, handleLoginSubmit }) {
   };
 
   return (
-    <div className="container form">
+    <div className="container">
       <form id="loginForm" onSubmit={handleSubmit}>
         <div className="form-row">
           <label for="email">Email:</label>
