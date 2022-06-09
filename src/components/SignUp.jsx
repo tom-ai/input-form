@@ -1,10 +1,12 @@
 import { useState } from "react";
+import PasswordChecklist from "react-password-checklist";
 
 function SignUp({ isCreating, toggleCreating }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordAgain, setPasswordAgain] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,6 +51,22 @@ function SignUp({ isCreating, toggleCreating }) {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
+        <div className="form-row">
+          <label for="passwordAgain">Retype the password:</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            onChange={(event) => setPasswordAgain(event.target.value)}
+          />
+        </div>
+        <PasswordChecklist
+          rules={["minLength", "specialChar", "number"]}
+          minLength={5}
+          value={password}
+          passwordAgain={passwordAgain}
+          onChange={(isValid) => {}}
+        />
         <button className="form-row button" type="submit">
           Create account
         </button>
