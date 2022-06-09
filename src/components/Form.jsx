@@ -5,6 +5,11 @@ function Form() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [isCreating, setIsCreating] = useState(false);
+  const toggleCreating = () => {
+    setIsCreating((currState) => !currState);
+    console.log("yes", isCreating);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,10 +37,18 @@ function Form() {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <CreateAccount />
+        <CreateAccount
+          isCreating={isCreating}
+          toggleCreating={toggleCreating}
+        />
         <button className="form-row button" type="submit">
           Submit
         </button>
+        {isCreating && (
+          <a className="form-row" href="#" onClick={toggleCreating}>
+            I have an account already!
+          </a>
+        )}
       </form>
     </div>
   );

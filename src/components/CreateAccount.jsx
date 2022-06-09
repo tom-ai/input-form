@@ -1,16 +1,24 @@
 import { useState } from "react";
 
-function CreateAccount() {
-  const [isCreating, setIsCreating] = useState(false);
-  const toggleCreating = () => {
-    setIsCreating((currState) => !currState);
-    console.log("yes", isCreating);
-  };
-
+function CreateAccount({ isCreating, toggleCreating }) {
+  if (!isCreating) {
+    return (
+      <a className="form-row" href="#" onClick={toggleCreating}>
+        Creating an account?
+      </a>
+    );
+  }
   return (
-    <a className="form-row" href="#" onClick={toggleCreating}>
-      Creating an account?
-    </a>
+    <>
+      <div className="form-row">
+        <label for="fname">First Name:</label>
+        <input id="fname" type="text" name="fname" />
+      </div>
+      <div className="form-row">
+        <label for="lname">Last Name:</label>
+        <input id="lname" type="text" name="lname" />
+      </div>
+    </>
   );
 }
 
